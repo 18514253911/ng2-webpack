@@ -1,19 +1,22 @@
 import {Component,OnInit,ViewChild,ElementRef} from '@angular/core';
-import * as echarts from 'echarts';
-import { option } from './options';
+// import * as echarts from 'echarts';
 @Component({
     selector: 'my-app',
-    template: `<h1>My First App</h1>
-    <div #da style="width:300px;height:300px"></div>
-    `
+    template: `
+    <ba-page-top></ba-page-top>
+    <ba-sidebar></ba-sidebar>
+    <div style="position:absolute;top:60px;left:180px;bottom:0px;right:0px">
+      <router-outlet></router-outlet>
+    </div>
+  `,
 })
 
 export class AppComponent implements OnInit{
-    @ViewChild('da')   da:ElementRef;
+    // @ViewChild('da')   da:ElementRef;
   
     ngOnInit() { 
-        var myChart = echarts.init(this.da.nativeElement);
+        // var myChart = echarts.init(this.da.nativeElement);
 
-        myChart.setOption(option);
+        // myChart.setOption(option);
     }
 }
